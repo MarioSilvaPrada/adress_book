@@ -1,0 +1,10 @@
+import * as TYPES from 'state/actions/types';
+
+export default (state = {}, action) => {
+  switch (action.type) {
+    case TYPES.GET_USERS:
+      return { ...state, users: action.payload };
+    default:
+      return state;
+  }
+};

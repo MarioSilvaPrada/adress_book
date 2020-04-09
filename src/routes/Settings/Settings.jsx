@@ -1,5 +1,5 @@
 import React from 'react';
-import * as S from './Page.styled';
+import * as S from './Settings.styled';
 
 
 const Page1 = () => (
