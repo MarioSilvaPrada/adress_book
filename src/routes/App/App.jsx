@@ -16,9 +16,11 @@ const App = ({ usersData, users, loading }) => {
       {loading ? (
         <p>Loading...</p>
       ) : (
-        users.map(({ name, email, location, nat, picture, login }) => (
+        users.map(({
+          name, email, location, nat, picture, login,
+        }) => (
           <div key={login.username}>
-            <img alt='user-pic' src={picture.large} />
+            <img alt="user-pic" src={picture.large} />
             <p>
               Username:
               {login.username}
