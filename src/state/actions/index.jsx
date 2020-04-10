@@ -15,9 +15,4 @@ export const getUsers = () => async (dispatch) => {
     type: TYPES.GET_USERS,
     payload: res.data.results,
   });
-
-  dispatch({
-    type: TYPES.SET_IS_LOADING,
-    payload: false,
-  });
 };

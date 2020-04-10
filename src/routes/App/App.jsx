@@ -4,11 +4,20 @@ import { connect } from 'react-redux';
 // actions
 import * as actions from 'state/actions';
 
+import UserCard from 'components/UserCard/UserCard';
 import * as S from './App.styled';
 
-const App = ({ usersData, users, loading }) => {
+
+const App = ({
+  usersData, users, loading, setLoading,
+}) => {
+  const getUserData = async () => {
+    await usersData();
+    setLoading(false);
+  };
+
   useEffect(() => {
-    usersData();
+    getUserData();
   }, []);
 
   return (
@@ -19,26 +28,15 @@ const App = ({ usersData, users, loading }) => {
         users.map(({
           name, email, location, nat, picture, login,
         }) => (
-          <div key={login.username}>
-            <img alt="user-pic" src={picture.large} />
-            <p>
-              Username:
-              {login.username}
-            </p>
-            <p>
-              Name:
-              {`${name.first} ${name.last}`}
-            </p>
-            <p>
-              E-mail:
-              {email}
-            </p>
-            <p>
-              Country:
-              {location.country}
-            </p>
-            <p>{nat}</p>
-          </div>
+          <UserCard
+            key={login.username}
+            name={name}
+            email={email}
+            location={location}
+            picture={picture}
+            login={login}
+            nat={nat}
+          />
         ))
       )}
     </S.Container>
@@ -52,6 +50,7 @@ const mapStateToProps = ({ users, loading }) => ({
 
 const mapDispatchToProps = {
   usersData: actions.getUsers,
+  setLoading: actions.setLoading,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
