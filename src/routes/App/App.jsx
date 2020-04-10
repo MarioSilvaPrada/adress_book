@@ -1,16 +1,14 @@
 import React, { useEffect } from 'react';
-
 import { connect } from 'react-redux';
+// Components
+import UserCard from 'components/UserCard/UserCard';
+import Spinner from 'components/Spinner/Spinner';
 // actions
 import * as actions from 'state/actions';
 
-import UserCard from 'components/UserCard/UserCard';
 import * as S from './App.styled';
 
-
-const App = ({
-  usersData, users, loading, setLoading,
-}) => {
+const App = ({ usersData, users, isLoading, setLoading }) => {
   const getUserData = async () => {
     await usersData();
     setLoading(false);
@@ -20,32 +18,28 @@ const App = ({
     getUserData();
   }, []);
 
-  return (
+  return isLoading ? (
+    <Spinner />
+  ) : (
     <S.Container>
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
-        users.map(({
-          name, email, location, nat, picture, login,
-        }) => (
-          <UserCard
-            key={login.username}
-            name={name}
-            email={email}
-            location={location}
-            picture={picture}
-            login={login}
-            nat={nat}
-          />
-        ))
-      )}
+      {users.map(({ name, email, location, nat, picture, login, cell }) => (
+        <UserCard
+          key={cell}
+          name={name}
+          email={email}
+          location={location}
+          picture={picture}
+          login={login}
+          nat={nat}
+        />
+      ))}
     </S.Container>
   );
 };
 
 const mapStateToProps = ({ users, loading }) => ({
   users: users.users,
-  loading: loading.loading,
+  isLoading: loading.loading,
 });
 
 const mapDispatchToProps = {

@@ -8,8 +8,7 @@ export const CardContainer = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.black(0.1)};
   border-radius: .63rem;
   box-shadow: ${({ theme }) => theme.boxShadow};
-  background-color: #f9d29d;
-  background-image: linear-gradient(315deg, #f9d29d 0%, #ffd8cb 74%);
+  
 `;
 
 export const Info = styled.div`font-size: .88rem;`;

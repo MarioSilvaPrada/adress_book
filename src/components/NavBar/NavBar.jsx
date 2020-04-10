@@ -1,13 +1,21 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import * as actions from 'state/actions';
 
 import * as S from './NavBar.styled';
 
 const NavBar = () => (
   <S.Container>
-    <S.StyledLink to="/">Home</S.StyledLink>
-    <S.StyledLink to="/1">Page1</S.StyledLink>
-    <S.StyledLink to="/2">Page2</S.StyledLink>
+    <S.StyledLink to='/'>Home</S.StyledLink>
+    <S.StyledLink to='/settings'>Settings</S.StyledLink>
+    <S.SearchWrapper>
+      <S.SearchInput type='text' placeholder={'Search by name'} />
+    </S.SearchWrapper>
   </S.Container>
 );
 
-export default NavBar;
+const mapDispatchToProps = {
+  filterByName: actions.filterByName,
+};
+
+export default connect(null, mapDispatchToProps)(NavBar);

@@ -1,9 +1,16 @@
 import * as TYPES from 'state/actions/types';
 
-export default (state = {}, action) => {
+const intialState = {
+  users: [],
+  searchFilter: '',
+};
+
+export default (state = intialState, action) => {
   switch (action.type) {
     case TYPES.GET_USERS:
       return { ...state, users: action.payload };
+    case TYPES.FILTER_BY_NAME:
+      return { ...state, searchFilter: action.payload };
     default:
       return state;
   }

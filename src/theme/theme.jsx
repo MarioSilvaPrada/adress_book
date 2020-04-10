@@ -1,6 +1,7 @@
 const theme = {
   colors: {
     black: (opacity = 1) => `rgba(0,0,0,${opacity})`,
+    orange: '#ee9617',
   },
   fontSize: {
     small: '9px',

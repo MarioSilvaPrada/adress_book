@@ -16,3 +16,12 @@ export const getUsers = () => async (dispatch) => {
     payload: res.data.results,
   });
 };
+
+export const filterByName = (input) => (dispatch) => {
+  const searchInput = input;
+
+  dispatch({
+    type: TYPES.FILTER_BY_NAME,
+    payload: searchInput,
+  });
+};
