@@ -8,7 +8,9 @@ import * as actions from 'state/actions';
 
 import * as S from './App.styled';
 
-const App = ({ usersData, users, isLoading, setLoading, filteredName }) => {
+const App = ({
+  usersData, users, isLoading, setLoading, filteredName,
+}) => {
   const getUserData = async () => {
     await usersData();
     setLoading(false);
@@ -27,7 +29,9 @@ const App = ({ usersData, users, isLoading, setLoading, filteredName }) => {
           const userName = `${user.name.first} ${user.name.last}`;
           return userName.toLowerCase().includes(filteredName.toLowerCase());
         })
-        .map(({ name, email, location, nat, picture, login, cell }) => (
+        .map(({
+          name, email, location, nat, picture, login, cell,
+        }) => (
           <UserCard
             key={cell}
             name={name}
