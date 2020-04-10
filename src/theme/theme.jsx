@@ -2,13 +2,14 @@ const theme = {
   colors: {
     black: (opacity = 1) => `rgba(0,0,0,${opacity})`,
     orange: '#ee9617',
+    red: '#fe5858',
   },
   fontSize: {
     small: '9px',
     medium: '17px',
     big: '40px',
   },
-  boxShadow: '0 0px 25px -5px rgba(0, 0, 0, 0.1), 0 0px 10px -5px rgba(0, 0, 0, 0.04)',
+  boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);',
   sizes: {
     navbarHeight: '4rem',
   },

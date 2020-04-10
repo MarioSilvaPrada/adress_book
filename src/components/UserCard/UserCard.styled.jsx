@@ -8,7 +8,12 @@ export const CardContainer = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.black(0.1)};
   border-radius: .63rem;
   box-shadow: ${({ theme }) => theme.boxShadow};
-  
+  cursor: pointer;
+  transition: .5s;
+
+  &:hover {
+    transform: translateY(-8px);
+  }
 `;
 
 export const Info = styled.div`font-size: .88rem;`;

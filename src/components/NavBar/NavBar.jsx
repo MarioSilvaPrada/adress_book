@@ -3,30 +3,39 @@ import { connect } from 'react-redux';
 import * as actions from 'state/actions';
 import { useLocation } from 'react-router-dom';
 
+import { MdSearch, MdSettings } from 'react-icons/md';
 import * as S from './NavBar.styled';
 
-const NavBar = ({ filterByName }) => {
+const NavBar = ({ filterByName, userInput }) => {
   const { pathname } = useLocation();
 
   return (
     <S.Container>
-      <S.StyledLink to="/">Home</S.StyledLink>
-      <S.StyledLink to="/settings">Settings</S.StyledLink>
       {pathname === '/' && (
         <S.SearchWrapper>
+          <MdSearch style={{ marginRight: '.3rem' }} />
           <S.SearchInput
             type="text"
             placeholder="Search by name"
             onChange={(e) => filterByName(e.target.value)}
+            value={userInput}
           />
         </S.SearchWrapper>
       )}
+      <S.StyledLink to="/settings">
+        <MdSettings style={{ marginRight: '.3rem' }} />
+        Settings
+      </S.StyledLink>
     </S.Container>
   );
 };
+
+const mapStateToProps = ({ users }) => ({
+  userInput: users.searchFilter,
+});
 
 const mapDispatchToProps = {
   filterByName: actions.filterByName,
 };
 
-export default connect(null, mapDispatchToProps)(NavBar);
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar);

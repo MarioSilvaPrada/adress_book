@@ -9,11 +9,24 @@ export const setLoading = (bool) => (dispatch) => {
 };
 
 export const getUsers = () => async (dispatch) => {
-  const res = await api.get();
+  const res = await api.get('?results=100');
 
   dispatch({
     type: TYPES.GET_USERS,
     payload: res.data.results,
+  });
+};
+
+export const fetchMore = () => async (dispatch, getState) => {
+  const res = await api.get('?results=50');
+
+  const currentUsers = getState().users.users;
+
+  const newUsersArr = [...currentUsers, ...res.data.results];
+
+  dispatch({
+    type: TYPES.FETCH_MORE,
+    payload: newUsersArr,
   });
 };
 
@@ -23,5 +36,12 @@ export const filterByName = (input) => (dispatch) => {
   dispatch({
     type: TYPES.FILTER_BY_NAME,
     payload: searchInput,
+  });
+};
+
+export const filterByCountry = (value) => (dispatch) => {
+  dispatch({
+    type: TYPES.FILTER_BY_COUNTRY,
+    payload: value,
   });
 };
