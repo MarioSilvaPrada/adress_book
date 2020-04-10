@@ -1,9 +1,11 @@
 import React from 'react';
 import * as S from './UserCard.styled';
 
-const UserCard = ({ picture, login, name, email, location, nat }) => (
+const UserCard = ({
+  picture, login, name, email, location, nat,
+}) => (
   <S.CardContainer>
-    <S.StyledImage alt='user-pic' src={picture.large} />
+    <S.StyledImage alt="user-pic" src={picture.large} />
     <S.Info>
       <p>
         Username:
