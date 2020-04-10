@@ -1,16 +1,21 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import { Route, Switch } from 'react-router-dom';
+
 // Components
-import UserCard from 'components/UserCard/UserCard';
-import Spinner from 'components/Spinner/Spinner';
+import NavBar from 'components/NavBar/NavBar';
+
+// Pages
+import Settings from 'routes/Settings/Settings';
+import Home from 'routes/Home/Home';
+import PageNotFound from 'routes/PageNotFound/PageNotFound';
+
 // actions
 import * as actions from 'state/actions';
 
-import * as S from './App.styled';
 
-const App = ({
-  usersData, users, isLoading, setLoading, filteredName,
-}) => {
+const App = ({ usersData, users, isLoading, setLoading, filteredName }) => {
+
   const getUserData = async () => {
     await usersData();
     setLoading(false);
@@ -20,29 +25,15 @@ const App = ({
     getUserData();
   }, []);
 
-  return isLoading ? (
-    <Spinner />
-  ) : (
-    <S.Container>
-      {users
-        .filter((user) => {
-          const userName = `${user.name.first} ${user.name.last}`;
-          return userName.toLowerCase().includes(filteredName.toLowerCase());
-        })
-        .map(({
-          name, email, location, nat, picture, login, cell,
-        }) => (
-          <UserCard
-            key={cell}
-            name={name}
-            email={email}
-            location={location}
-            picture={picture}
-            login={login}
-            nat={nat}
-          />
-        ))}
-    </S.Container>
+  return (
+    <>
+      <NavBar />
+      <Switch>
+        <Route exact path="/" component={() => <Home users={users} isLoading={isLoading} filteredName={filteredName} />} />
+        <Route exact path="/settings" component={Settings} />
+        <Route path="*" component={PageNotFound} />
+      </Switch>
+    </>
   );
 };
 
