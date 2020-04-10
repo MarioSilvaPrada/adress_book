@@ -7,6 +7,11 @@ export const Container = styled.div`
     align-items: center;
     background-color #ee9617;
     background-image linear-gradient(315deg, #ee9617 0%, #fe5858 74%);
+    height: ${({ theme }) => theme.sizes.navbarHeight};
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
 `;
 
 export const StyledLink = styled(Link)`
