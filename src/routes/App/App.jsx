@@ -8,7 +8,9 @@ import * as actions from 'state/actions';
 
 import * as S from './App.styled';
 
-const App = ({ usersData, users, isLoading, setLoading }) => {
+const App = ({
+  usersData, users, isLoading, setLoading,
+}) => {
   const getUserData = async () => {
     await usersData();
     setLoading(false);
@@ -22,7 +24,9 @@ const App = ({ usersData, users, isLoading, setLoading }) => {
     <Spinner />
   ) : (
     <S.Container>
-      {users.map(({ name, email, location, nat, picture, login, cell }) => (
+      {users.map(({
+        name, email, location, nat, picture, login, cell,
+      }) => (
         <UserCard
           key={cell}
           name={name}

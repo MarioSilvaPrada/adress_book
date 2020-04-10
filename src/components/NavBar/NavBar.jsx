@@ -6,10 +6,10 @@ import * as S from './NavBar.styled';
 
 const NavBar = () => (
   <S.Container>
-    <S.StyledLink to='/'>Home</S.StyledLink>
-    <S.StyledLink to='/settings'>Settings</S.StyledLink>
+    <S.StyledLink to="/">Home</S.StyledLink>
+    <S.StyledLink to="/settings">Settings</S.StyledLink>
     <S.SearchWrapper>
-      <S.SearchInput type='text' placeholder={'Search by name'} />
+      <S.SearchInput type="text" placeholder="Search by name" />
     </S.SearchWrapper>
   </S.Container>
 );

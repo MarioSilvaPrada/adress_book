@@ -6,7 +6,7 @@ export const Container = styled.div`
   grid-gap: 1rem;
   padding: 2rem;
   width: 100%;
-  min-height: calc(100vh - ${({theme}) => theme.sizes.navbarHeight});
+  min-height: calc(100vh - ${({ theme }) => theme.sizes.navbarHeight});
 `;
 
 export const DataWrapper = styled.div``;
