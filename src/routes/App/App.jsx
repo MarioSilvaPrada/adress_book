@@ -14,8 +14,9 @@ import PageNotFound from 'routes/PageNotFound/PageNotFound';
 import * as actions from 'state/actions';
 
 
-const App = ({ usersData, users, isLoading, setLoading, filteredName }) => {
-
+const App = ({
+  usersData, users, isLoading, setLoading, filteredName,
+}) => {
   const getUserData = async () => {
     await usersData();
     setLoading(false);

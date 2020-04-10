@@ -17,7 +17,6 @@ import theme from './theme/theme';
 import App from './routes/App/App';
 
 
-
 const rootElement = document.getElementById('root');
 const root = (
   <Provider store={store}>

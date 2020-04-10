@@ -1,6 +1,6 @@
 import React from 'react';
-import * as S from './Settings.styled';
 import { useHistory } from 'react-router-dom';
+import * as S from './Settings.styled';
 
 const Settings = () => {
   const history = useHistory();
@@ -13,7 +13,7 @@ const Settings = () => {
       <h1>Settings</h1>
 
       <S.Container>
-        <button type='button' onClick={goBack}>
+        <button type="button" onClick={goBack}>
           Go back
         </button>
       </S.Container>

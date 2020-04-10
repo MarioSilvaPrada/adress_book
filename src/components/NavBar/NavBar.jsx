@@ -6,17 +6,17 @@ import { useLocation } from 'react-router-dom';
 import * as S from './NavBar.styled';
 
 const NavBar = ({ filterByName }) => {
-  const pathname = useLocation().pathname;
+  const { pathname } = useLocation();
 
   return (
     <S.Container>
-      <S.StyledLink to='/'>Home</S.StyledLink>
-      <S.StyledLink to='/settings'>Settings</S.StyledLink>
+      <S.StyledLink to="/">Home</S.StyledLink>
+      <S.StyledLink to="/settings">Settings</S.StyledLink>
       {pathname === '/' && (
         <S.SearchWrapper>
           <S.SearchInput
-            type='text'
-            placeholder='Search by name'
+            type="text"
+            placeholder="Search by name"
             onChange={(e) => filterByName(e.target.value)}
           />
         </S.SearchWrapper>
