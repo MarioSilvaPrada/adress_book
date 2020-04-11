@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
-    padding: 2rem;
+    padding: 0 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -17,7 +17,6 @@ export const Container = styled.div`
 `;
 
 export const StyledLink = styled(Link)`
-    margin-right: 2rem;
     display: flex;
     align-items: center;
     font-size: 1.5rem;
@@ -29,12 +28,22 @@ export const SearchWrapper = styled.div`
   align-items: center;
   font-size: 1.8rem;
   color: white;
+  position: relative;
 `;
 
 export const SearchInput = styled.input`
-  width: 15rem;
+  width: 20rem;
   padding: .5rem 1rem;
   border-radius: .6rem;
   border: none;
   font-size: 1rem;
+`;
+
+export const ClearButton = styled.div`
+  position: absolute;
+  top: 25%;
+  right: .6rem;
+  color: ${({ theme }) => theme.colors.red};
+  font-size: 1.1rem;
+  cursor: pointer;
 `;

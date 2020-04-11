@@ -18,10 +18,13 @@ export const getUsers = () => async (dispatch) => {
 };
 
 export const fetchMore = () => async (dispatch, getState) => {
-  const res = await api.get('?results=50');
+  // get filter nationality
+  const userNat = getState().users.countryFilter;
+  
+  const res = await api.get(`?results=50&nat=${userNat.toLowerCase()}`);
 
   const currentUsers = getState().users.users;
-
+  // spread new data with current users array
   const newUsersArr = [...currentUsers, ...res.data.results];
 
   dispatch({

@@ -10,17 +10,32 @@ export const CardContainer = styled.div`
   box-shadow: ${({ theme }) => theme.boxShadow};
   cursor: pointer;
   transition: .5s;
+  max-height: 18rem;
 
   &:hover {
     transform: translateY(-8px);
   }
 `;
 
-export const Info = styled.div`font-size: .88rem;`;
+export const Info = styled.div`font-size: .8rem;`;
 
 export const StyledImage = styled.img`
   border-radius: 100%;
   width: 7rem;
   height: 7rem;
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
 `;
+
+export const Fields = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const Label = styled.p`
+  font-weight: bold;
+  color: ${({ theme }) => theme.colors.orange};
+  margin: .4rem 0 .2rem;
+`;
+
+export const UserData = styled.p`font-size: .9rem;`;
