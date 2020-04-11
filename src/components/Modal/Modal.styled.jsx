@@ -48,11 +48,11 @@ export const CloseBtn = styled.button`
 
 export const Info = styled.div`
     font-size: 1rem;
-`
+`;
 
 export const Label = styled.p`
     font-size: .88rem;
     font-weight: bold;
     margin: .8rem 0 .2rem;
     color: ${({ theme }) => theme.colors.orange};
-`
+`;

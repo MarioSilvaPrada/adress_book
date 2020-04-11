@@ -20,7 +20,7 @@ export const getUsers = () => async (dispatch) => {
 export const fetchMore = () => async (dispatch, getState) => {
   // get filter nationality
   const userNat = getState().users.countryFilter;
-  
+
   const res = await api.get(`?results=50&nat=${userNat.toLowerCase()}`);
 
   const currentUsers = getState().users.users;
