@@ -27,6 +27,9 @@ export const fetchMore = () => async (dispatch, getState) => {
   // spread new data with current users array
   const newUsersArr = [...currentUsers, ...res.data.results];
 
+  // go to top
+  window.scrollTo(0, 0);
+
   dispatch({
     type: TYPES.FETCH_MORE,
     payload: newUsersArr,

@@ -12,10 +12,15 @@ const Animation = keyframes`
   }
 `;
 
-export const Wrapper = styled.div`padding: 10rem 2rem 2rem;`;
+export const Wrapper = styled.div`
+  padding: 10rem 2rem 2rem;
+  @media (max-width: 650px) {
+    padding-top: 7rem;
+  }
+`;
 
 export const Container = styled.div`
-  width: 50%;
+  width: 40rem;
   height: 50vh;
   margin: 0 auto;
   border-radius: .6rem;
@@ -25,6 +30,10 @@ export const Container = styled.div`
   opacity: 0;
   animation: ${(props) => props.inView && Animation} .5s forwards cubic-bezier(0.25, 0.1, 0.25, 1);
   box-shadow: ${({ theme }) => theme.boxShadow};
+
+  @media (max-width: 650px) {
+    width: 100%;
+  }
 `;
 
 export const StyledButton = styled.button`

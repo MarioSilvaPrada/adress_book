@@ -8,6 +8,10 @@ export const Container = styled.div`
   padding: 5rem 2rem 2rem;
   width: 100%;
   min-height: 110vh;
+
+  @media (max-width: 600px) {
+    padding-top: 8rem;
+  }
 `;
 
 export const DataWrapper = styled.div``;

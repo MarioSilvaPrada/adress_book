@@ -17,6 +17,10 @@ export const Modal = styled.div`
   background: white;
   padding: 1rem 2rem;
   border-radius: .63rem;
+
+  @media (max-width: 600px) {
+    width: 90%;
+  }
 `;
 
 export const ModalHeader = styled.div`
@@ -29,6 +33,7 @@ export const ModalTitle = styled.h1`
   font-size: 1.1rem;
   margin-right: 4rem;
   ${({ theme }) => theme.colors.orange};
+  line-height: 1.7rem;
 `;
 
 export const CloseBtn = styled.button`
