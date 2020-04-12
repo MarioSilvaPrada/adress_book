@@ -8,10 +8,12 @@ import Modal from 'components/Modal/Modal';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import * as S from './Home.styled';
 
-const Home = ({ users, isLoading, filteredName, filteredCountry, fetchMore }) => {
+const Home = ({
+  users, isLoading, filteredName, filteredCountry, fetchMore,
+}) => {
   // Modal State
-  const [ isModalVisible, setIsModalVisible ] = useState(false);
-  const [ modalInfo, setModalInfo ] = useState({});
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [modalInfo, setModalInfo] = useState({});
 
   const getModalInfo = (info) => {
     setModalInfo(info);
@@ -26,11 +28,11 @@ const Home = ({ users, isLoading, filteredName, filteredCountry, fetchMore }) =>
       next={fetchMore}
       hasMore={users.length < 1000}
       loader={<Spinner />}
-      endMessage={
+      endMessage={(
         <p style={{ textAlign: 'center', marginBottom: '2rem' }}>
           <b>End of users catalog</b>
         </p>
-      }
+      )}
     >
       <S.Container>
         {users
@@ -39,7 +41,9 @@ const Home = ({ users, isLoading, filteredName, filteredCountry, fetchMore }) =>
             return userName.toLowerCase().includes(filteredName.toLowerCase());
           })
           .filter((user) => user.nat.includes(filteredCountry))
-          .map(({ name, email, location, picture, login, cell, phone }) => (
+          .map(({
+            name, email, location, picture, login, cell, phone,
+          }) => (
             <UserCard
               key={cell}
               name={name}
