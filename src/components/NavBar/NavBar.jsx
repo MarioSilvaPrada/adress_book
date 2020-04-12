@@ -16,8 +16,8 @@ const NavBar = ({ filterByName, userInput }) => {
         <S.SearchWrapper>
           <MdSearch style={{ marginRight: '.3rem' }} />
           <S.SearchInput
-            type="text"
-            placeholder="Search by name"
+            type='text'
+            placeholder='Search by name'
             onChange={(e) => filterByName(e.target.value)}
             value={userInput}
           />
@@ -28,7 +28,7 @@ const NavBar = ({ filterByName, userInput }) => {
           )}
         </S.SearchWrapper>
       )}
-      <S.StyledLink to="/settings" disableclick={pathname === '/settings'}>
+      <S.StyledLink to='/settings' disableclick={pathname === '/settings' ? 1 : 0}>
         <MdSettings style={{ marginRight: '.3rem' }} />
         Settings
       </S.StyledLink>
