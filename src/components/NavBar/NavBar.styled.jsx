@@ -32,7 +32,7 @@ export const StyledLink = styled(Link)`
     align-items: center;
     font-size: 1.5rem;
     color: white;
-    ${({ disableClick }) => disableClick && DisableClick};
+    ${({ disableclick }) => disableclick && DisableClick};
 
     @media(max-width: 600px) {
       margin-bottom: 1rem;

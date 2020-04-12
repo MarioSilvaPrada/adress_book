@@ -28,7 +28,7 @@ const NavBar = ({ filterByName, userInput }) => {
           )}
         </S.SearchWrapper>
       )}
-      <S.StyledLink to="/settings" disableClick={pathname === '/settings'}>
+      <S.StyledLink to="/settings" disableclick={pathname === '/settings'}>
         <MdSettings style={{ marginRight: '.3rem' }} />
         Settings
       </S.StyledLink>
