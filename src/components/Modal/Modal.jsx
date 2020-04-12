@@ -2,11 +2,8 @@ import React from 'react';
 import { IoIosClose } from 'react-icons/io';
 import * as S from './Modal.styled';
 
-
 const Modal = ({ modalInfo, setIsModalVisible }) => {
-  const {
-    location, name, phone, cell,
-  } = modalInfo;
+  const { location, name, phone, cell } = modalInfo;
 
   const userName = `${name.first} ${name.last}`;
 
@@ -41,8 +38,8 @@ const Modal = ({ modalInfo, setIsModalVisible }) => {
     <S.Background>
       <S.Modal>
         <S.ModalHeader>
-          <S.ModalTitle>{`Aditional information from ${userName}`}</S.ModalTitle>
-          <S.CloseBtn type="button" onClick={() => setIsModalVisible(false)}>
+          <S.ModalTitle data-testid='test'>{`Aditional information from ${userName}`}</S.ModalTitle>
+          <S.CloseBtn type='button' onClick={() => setIsModalVisible(false)}>
             <IoIosClose />
           </S.CloseBtn>
         </S.ModalHeader>

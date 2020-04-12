@@ -11,7 +11,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
 // Components
-import theme from './theme/theme';
+import theme from 'theme/theme';
 
 // Pages
 import App from './routes/App/App';

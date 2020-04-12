@@ -1,6 +1,6 @@
 import * as TYPES from 'state/actions/types';
 
-const intialState = {
+export const intialState = {
   users: [],
   searchFilter: '',
   countryFilter: '',

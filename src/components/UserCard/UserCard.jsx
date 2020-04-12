@@ -11,15 +11,15 @@ const UserCard = ({
     <S.StyledImage alt="user-pic" src={picture.large} />
     <S.Info>
       <S.Fields>
-        <S.Label>Username:</S.Label>
+        <S.Label data-testid="username">Username:</S.Label>
         <S.UserData>{login.username}</S.UserData>
       </S.Fields>
       <S.Fields>
-        <S.Label>Name:</S.Label>
+        <S.Label data-testid="name">Name:</S.Label>
         <S.UserData>{`${name.first} ${name.last}`}</S.UserData>
       </S.Fields>
       <S.Fields>
-        <S.Label>E-mail:</S.Label>
+        <S.Label data-testid="email">E-mail:</S.Label>
         <S.UserData>{email}</S.UserData>
       </S.Fields>
     </S.Info>

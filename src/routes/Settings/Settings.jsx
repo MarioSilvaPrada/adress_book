@@ -31,7 +31,7 @@ const Settings = ({ setFilter, filteredCountry }) => {
         <S.InputContainer>
           Filter by nationality
           <S.Select value={filteredCountry} onChange={(e) => setFilter(e.target.value)}>
-            <option value="">All</option>
+            <option data-testid="counter" value="">All</option>
             <option value="CH">Switzerland</option>
             <option value="ES">Spain</option>
             <option value="FR">France</option>
